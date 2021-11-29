@@ -14,9 +14,13 @@ class _SocialPageState extends State<SocialPage> {
       ),
       body: Container(
         padding: const EdgeInsets.all(10.0),
+        height: MediaQuery.of(context).size.height + 0.98,
         child: Column(
           children: [
-            SocialPosts(),
+            SocialPost(
+              username: 'Mia',
+              post: 'Palm oil is bad for the environment',
+            ),
           ],
         ),
       ),

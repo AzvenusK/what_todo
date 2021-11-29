@@ -94,10 +94,10 @@ final List<PersonalCarbonData> personalWeeklyData = [
   ),
 ];
 
-class PersonalWeeklyChart extends StatelessWidget {
+class PersonalChart extends StatelessWidget {
   final List<PersonalCarbonData> data;
 
-  PersonalWeeklyChart({this.data});
+  PersonalChart({this.data});
 
   Widget build(BuildContext context) {
     List<charts.Series<PersonalCarbonData, String>> series = [

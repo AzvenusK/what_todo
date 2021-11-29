@@ -8,7 +8,7 @@ class Level extends StatelessWidget {
       children: <Widget>[
         StepProgressIndicator(
           totalSteps: 30,
-          currentStep: 1,
+          currentStep: 16,
           selectedColor: Colors.green,
           unselectedColor: Colors.grey,
         ),

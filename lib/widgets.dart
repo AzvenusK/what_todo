@@ -54,6 +54,57 @@ class TaskCardWidget extends StatelessWidget {
   }
 }
 
+class SocialPost extends StatelessWidget {
+  final String username;
+  final String post;
+
+  SocialPost({this.username, this.post});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(
+        vertical: 32.0,
+        horizontal: 24.0,
+      ),
+      margin: EdgeInsets.only(
+        bottom: 20.0,
+      ),
+      decoration: BoxDecoration(
+        color: Color(0xFFedffdc),
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            username ?? "(No User)",
+            style: TextStyle(
+              color: Color(0xFF211551),
+              fontSize: 22.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              top: 10.0,
+            ),
+            child: Text(
+              post ?? "No Post Added",
+              style: TextStyle(
+                fontSize: 16.0,
+                color: Color(0xFF86829D),
+                height: 1.5,
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
 class TodoWidget extends StatelessWidget {
   final String text;
   final bool isDone;
@@ -78,11 +129,9 @@ class TodoWidget extends StatelessWidget {
             decoration: BoxDecoration(
                 color: isDone ? Color(0xFF3EB489) : Colors.transparent,
                 borderRadius: BorderRadius.circular(6.0),
-                border: isDone ? null : Border.all(
-                    color: Color(0xFF86829D),
-                    width: 1.5
-                )
-            ),
+                border: isDone
+                    ? null
+                    : Border.all(color: Color(0xFF86829D), width: 1.5)),
             child: Image(
               image: AssetImage('assets/images/check_icon.png'),
             ),
@@ -144,9 +193,9 @@ class _FactCardWidgetState extends State<FactCardWidget> {
             ),
           ),
           Padding(
-              padding: EdgeInsets.only(
-                top: 10.0,
-              ),
+            padding: EdgeInsets.only(
+              top: 10.0,
+            ),
             child: SingleChildScrollView(
               child: FutureBuilder(
                 future: fact,
@@ -167,7 +216,6 @@ class _FactCardWidgetState extends State<FactCardWidget> {
     );
   }
 }
-
 
 class NoGlowBehaviour extends ScrollBehavior {
   @override

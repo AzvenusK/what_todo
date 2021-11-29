@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:what_todo/levels.dart';
+import 'package:what_todo/data/levels.dart';
 
 class ProfileData extends StatelessWidget {
   final String name;
@@ -15,37 +15,21 @@ class ProfileData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10.0),
       child: Column(
         children: [
-          Flexible(
-            flex: 1,
-            child: Text(
-              name,
-            ),
+          Text(
+            name,
           ),
-          Flexible(
-            flex: 1,
-            child: Text(
-              "Your username: " + username,
-            ),
+          Text(
+            "Your username: " + username,
           ),
-          Flexible(
-            flex: 1,
-            child: Text(
-              "Your Group: " + group,
-            ),
+          Text(
+            "Your Group: " + group,
           ),
-          Flexible(
-            flex: 1,
-            child: Text(
-              "Your Group Level:",
-            ),
+          Text(
+            "Your Group Level: Level 3",
           ),
-          Flexible(
-            flex: 1,
-            child: Level(),
-          ),
+          Level(),
         ],
       ),
     );
