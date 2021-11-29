@@ -78,7 +78,7 @@ class _TaskpageState extends State<Taskpage> {
                             padding: const EdgeInsets.all(24.0),
                             child: Image(
                               image: AssetImage(
-                                  'assets/images/back_arrow_icon.png'),
+                                  'assets/images/double_tick_icon.png'),
                             ),
                           ),
                         ),
@@ -197,7 +197,7 @@ class _TaskpageState extends State<Taskpage> {
                                 color: Colors.transparent,
                                 borderRadius: BorderRadius.circular(6.0),
                                 border: Border.all(
-                                    color: Color(0xFF86829D), width: 1.5)),
+                                    color: Color(0xFF737373), width: 1.5)),
                             child: Image(
                               image: AssetImage('assets/images/check_icon.png'),
                             ),
@@ -214,7 +214,7 @@ class _TaskpageState extends State<Taskpage> {
                                     Todo _newTodo = Todo(
                                       title: value,
                                       isDone: 0,
-                                        taskId: _taskId,
+                                      taskId: _taskId,
                                     );
                                     await _dbHelper.insertTodo(_newTodo);
                                     setState(() {});
@@ -252,7 +252,10 @@ class _TaskpageState extends State<Taskpage> {
                       width: 60.0,
                       height: 60.0,
                       decoration: BoxDecoration(
-                        color: Color(0xFFFE3577),
+                        gradient: LinearGradient(
+                            colors: [Color(0xFFce0000), Color(0xFF690000)],
+                            begin: Alignment(0.0, -1.0),
+                            end: Alignment(0.0, 1.0)),
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: Image(

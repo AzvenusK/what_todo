@@ -1,5 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:what_todo/database_helper.dart';
+import 'package:what_todo/screens/datapage.dart';
+import 'package:what_todo/screens/profilepage.dart';
 import 'package:what_todo/screens/taskpage.dart';
 import 'package:what_todo/widgets.dart';
 
@@ -18,7 +21,7 @@ class _HomepageState extends State<Homepage> {
         child: Container(
           width: double.infinity,
           padding: EdgeInsets.symmetric(horizontal: 24.0),
-          color: Color(0xFFF6F6F6),
+          color: Color(0xFFffffff),
           child: Stack(
             children: [
               Column(
@@ -33,6 +36,7 @@ class _HomepageState extends State<Homepage> {
                       image: AssetImage('assets/images/logo.png'),
                     ),
                   ),
+                  FactCardWidget(),
                   Expanded(
                     child: FutureBuilder(
                       initialData: [],
@@ -53,7 +57,7 @@ class _HomepageState extends State<Homepage> {
                                       ),
                                     ),
                                   ).then(
-                                    (value) {
+                                        (value) {
                                       setState(() {});
                                     },
                                   );
@@ -79,9 +83,8 @@ class _HomepageState extends State<Homepage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Taskpage(
-                                task: null,
-                              )),
+                          builder: (context) => Taskpage(task: null)
+                      ),
                     ).then((value) {
                       setState(() {});
                     });
@@ -91,7 +94,7 @@ class _HomepageState extends State<Homepage> {
                     height: 60.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                          colors: [Color(0xFF7349FE), Color(0xFF643FDB)],
+                          colors: [Color(0xFF65FFB3), Color(0xFF19FF8D)],
                           begin: Alignment(0.0, -1.0),
                           end: Alignment(0.0, 1.0)),
                       borderRadius: BorderRadius.circular(20.0),
@@ -100,6 +103,41 @@ class _HomepageState extends State<Homepage> {
                       image: AssetImage(
                         "assets/images/add_icon.png",
                       ),
+                      color: Color(0xFFFFFFFF),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+
+                bottom: 600.0,
+                right: 0.0,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ProfilePage()
+                      ),
+                    ).then((value) {
+                      setState(() {});
+                    });
+                  },
+                  child: Container(
+                    width: 80.0,
+                    height: 80.0,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [Color(0xFF65FFB3), Color(0xFF224600)],
+                          begin: Alignment(0.0, -1.0),
+                          end: Alignment(0.0, 1.0)),
+                      borderRadius: BorderRadius.circular(50.0),
+                    ),
+                    child: Image(
+                      image: AssetImage(
+                        "assets/images/profile_icon.png",
+                      ),
+                      color: Color(0xFFFFFFFF),
                     ),
                   ),
                 ),
@@ -111,3 +149,4 @@ class _HomepageState extends State<Homepage> {
     );
   }
 }
+

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+import 'package:connectivity/connectivity.dart';
+import 'package:http/http.dart' as http;
 
 class TaskCardWidget extends StatelessWidget {
   final String title;
@@ -18,7 +21,7 @@ class TaskCardWidget extends StatelessWidget {
         bottom: 20.0,
       ),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Color(0xFFedffdc),
         borderRadius: BorderRadius.circular(20.0),
       ),
       child: Column(
@@ -73,12 +76,12 @@ class TodoWidget extends StatelessWidget {
               right: 12.0,
             ),
             decoration: BoxDecoration(
-              color: isDone ? Color(0xFF7349FE) : Colors.transparent,
-              borderRadius: BorderRadius.circular(6.0),
-              border: isDone ? null : Border.all(
-                color: Color(0xFF86829D),
-                width: 1.5
-              )
+                color: isDone ? Color(0xFF3EB489) : Colors.transparent,
+                borderRadius: BorderRadius.circular(6.0),
+                border: isDone ? null : Border.all(
+                    color: Color(0xFF86829D),
+                    width: 1.5
+                )
             ),
             child: Image(
               image: AssetImage('assets/images/check_icon.png'),
@@ -100,10 +103,89 @@ class TodoWidget extends StatelessWidget {
   }
 }
 
+class FactCardWidget extends StatefulWidget {
+  @override
+  _FactCardWidgetState createState() => _FactCardWidgetState();
+}
+
+class _FactCardWidgetState extends State<FactCardWidget> {
+  Future fact = fetchFact();
+
+  void _generateFact() {
+    setState(() {
+      fact = fetchFact();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(
+        vertical: 32.0,
+        horizontal: 24.0,
+      ),
+      margin: EdgeInsets.only(
+        bottom: 20.0,
+      ),
+      decoration: BoxDecoration(
+        color: Colors.greenAccent,
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Fact of the Day!",
+            style: TextStyle(
+              color: Color(0xFF211551),
+              fontSize: 22.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Padding(
+              padding: EdgeInsets.only(
+                top: 10.0,
+              ),
+            child: SingleChildScrollView(
+              child: FutureBuilder(
+                future: fact,
+                builder: (context, snapshot) {
+                  return Text(
+                    snapshot.data.toString(),
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.black54,
+                    ),
+                  );
+                },
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
 class NoGlowBehaviour extends ScrollBehavior {
   @override
   Widget buildViewportChrome(
-    BuildContext context, Widget child, AxisDirection axisDirection) {
+      BuildContext context, Widget child, AxisDirection axisDirection) {
     return child;
   }
+}
+
+Future fetchFact() async {
+  var connectivityResult = await (Connectivity().checkConnectivity());
+  if (connectivityResult == ConnectivityResult.mobile ||
+      connectivityResult == ConnectivityResult.wifi) {
+    final response = await http.get('https://uselessfacts.jsph.pl/random.txt');
+    if (response.statusCode == 200)
+      return response.body.toString();
+    else
+      return "Error on sending request!";
+  } else
+    return "You must be connected to internet to get facts!";
 }

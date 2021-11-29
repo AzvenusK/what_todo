@@ -12,6 +12,13 @@ dependencies:
   flutter:
     sdk: flutter
 
+  charts_flutter:
+    git:
+      url: git://github.com/google/charts.git
+      path: charts_flutter
+  step_progress_indicator: ^1.0.1
+  http:  ^0.12.0+2
+  connectivity: ^0.4.2+1
   cupertino_icons: ^0.1.3
   google_fonts: ^1.1.0
 
