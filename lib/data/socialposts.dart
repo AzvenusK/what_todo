@@ -45,6 +45,10 @@ class SocialPost extends StatelessWidget {
               ),
             ),
           ),
+          Icon(
+            Icons.add_circle_rounded,
+            color: Colors.black,
+          ),
         ],
       ),
     );

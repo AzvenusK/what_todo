@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:what_todo/socialposts.dart';
+import 'package:what_todo/data/socialposts.dart';
 
 class SocialPage extends StatefulWidget {
   @override
@@ -18,9 +18,15 @@ class _SocialPageState extends State<SocialPage> {
         child: Column(
           children: [
             SocialPost(
-              username: 'Mia',
-              post: 'Palm oil is bad for the environment',
+              username: 'Martha-the-activist',
+              post:
+                  'Palm oil is bad for the environment, try to fild alternatives and not eat it',
             ),
+            SocialPost(
+              username: 'Mia123',
+              post:
+                  'Turning off all electronics at night can help reduce your emissions, remember to do this before going to bed',
+            )
           ],
         ),
       ),

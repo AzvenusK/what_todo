@@ -17,22 +17,22 @@ final List<GroupCarbonData> groupData = [
   GroupCarbonData(
     name: 'Mia',
     emissions: 10,
-    color: charts.ColorUtil.fromDartColor(Color(0xFF00cc00)),
+    color: charts.ColorUtil.fromDartColor(Color(0xFFcd7f32)),
   ),
   GroupCarbonData(
     name: 'Anmol',
     emissions: 5,
-    color: charts.ColorUtil.fromDartColor(Color(0xFF800080)),
+    color: charts.ColorUtil.fromDartColor(Color(0xFFffd700)),
   ),
   GroupCarbonData(
     name: 'Barbara',
     emissions: 12,
-    color: charts.ColorUtil.fromDartColor(Color(0xFF0000ff)),
+    color: charts.ColorUtil.fromDartColor(Color(0xFFcd7f32)),
   ),
   GroupCarbonData(
     name: 'Jaroslav',
     emissions: 8,
-    color: charts.ColorUtil.fromDartColor(Color(0xFFff8000)),
+    color: charts.ColorUtil.fromDartColor(Color(0xFFc0c0c0)),
   ),
 ];
 
@@ -52,22 +52,22 @@ final List<PersonalCarbonData> personalDailyData = [
   PersonalCarbonData(
     category: 'travel',
     emissions: 4,
-    color: charts.ColorUtil.fromDartColor(Color(0xFF808080)),
+    color: charts.ColorUtil.fromDartColor(Color(0xFFcd7f32)),
   ),
   PersonalCarbonData(
     category: 'food',
     emissions: 3,
-    color: charts.ColorUtil.fromDartColor(Color(0xFF8b4513)),
+    color: charts.ColorUtil.fromDartColor(Color(0xFFc0c0c0)),
   ),
   PersonalCarbonData(
     category: 'financial',
     emissions: 2,
-    color: charts.ColorUtil.fromDartColor(Color(0xFF8b4513)),
+    color: charts.ColorUtil.fromDartColor(Color(0xFFffd700)),
   ),
   PersonalCarbonData(
     category: 'other',
     emissions: 1,
-    color: charts.ColorUtil.fromDartColor(Color(0xFF2aa52a)),
+    color: charts.ColorUtil.fromDartColor(Color(0xFFffd700)),
   ),
 ];
 
@@ -75,22 +75,22 @@ final List<PersonalCarbonData> personalWeeklyData = [
   PersonalCarbonData(
     category: 'travel',
     emissions: 28,
-    color: charts.ColorUtil.fromDartColor(Color(0xFF808080)),
+    color: charts.ColorUtil.fromDartColor(Color(0xFFcd7f32)),
   ),
   PersonalCarbonData(
     category: 'food',
     emissions: 21,
-    color: charts.ColorUtil.fromDartColor(Color(0xFF8b4513)),
+    color: charts.ColorUtil.fromDartColor(Color(0xFFc0c0c0)),
   ),
   PersonalCarbonData(
     category: 'financial',
     emissions: 14,
-    color: charts.ColorUtil.fromDartColor(Color(0xFF8b4513)),
+    color: charts.ColorUtil.fromDartColor(Color(0xFFffd700)),
   ),
   PersonalCarbonData(
     category: 'other',
     emissions: 35,
-    color: charts.ColorUtil.fromDartColor(Color(0xFF2aa52a)),
+    color: charts.ColorUtil.fromDartColor(Color(0xFFffd700)),
   ),
 ];
 
