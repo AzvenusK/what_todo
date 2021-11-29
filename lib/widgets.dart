@@ -219,7 +219,7 @@ class _FactCardWidgetState extends State<FactCardWidget> {
 <<<<<<< Updated upstream
 =======
 */
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 
 class NoGlowBehaviour extends ScrollBehavior {
   @override
@@ -244,4 +244,4 @@ Future fetchFact() async {
 <<<<<<< Updated upstream
 =======
 */
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes

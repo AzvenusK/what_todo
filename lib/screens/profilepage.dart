@@ -16,59 +16,61 @@ class _ProfilePageState extends State<ProfilePage> {
       appBar: AppBar(
         title: Text("Profile"),
       ),
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-        height: MediaQuery.of(context).size.height + 0.98,
-        child: ListView(
-          children: <Widget>[
-            ProfileData('Mia', 'Mia123', 'Go Green'),
-            GroupMembers(),
-            TextButton(
-              child: const Text("Social Feed"),
-              style: TextButton.styleFrom(
-                  primary: Color(0xFFFFFFFF),
-                  backgroundColor: Color(0xFF65FFB3),
-                  textStyle: TextStyle(fontSize: 20)),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) {
-                    return SocialPage();
-                  }),
-                );
-              },
-            ),
-            TextButton(
-              child: const Text("My Daily Data"),
-              style: TextButton.styleFrom(
-                  primary: Color(0xFFFFFFFF),
-                  backgroundColor: Color(0xFF65FFB3),
-                  textStyle: TextStyle(fontSize: 20)),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) {
-                    return DailyDataPage();
-                  }),
-                );
-              },
-            ),
-            TextButton(
-              child: const Text("My Daily Tasks"),
-              style: TextButton.styleFrom(
-                  primary: Color(0xFFFFFFFF),
-                  backgroundColor: Color(0xFF65FFB3),
-                  textStyle: TextStyle(fontSize: 20)),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) {
-                    return Homepage();
-                  }),
-                );
-              },
-            ),
-          ],
+      body: SafeArea(
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+          height: MediaQuery.of(context).size.height + 0.98,
+          child: ListView(
+            children: <Widget>[
+              ProfileData('Mia', 'Mia123', 'Go Green'),
+              GroupMembers(),
+              TextButton(
+                child: const Text("Social Feed"),
+                style: TextButton.styleFrom(
+                    primary: Color(0xFFFFFFFF),
+                    backgroundColor: Color(0xFF65FFB3),
+                    textStyle: TextStyle(fontSize: 20)),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return SocialPage();
+                    }),
+                  );
+                },
+              ),
+              TextButton(
+                child: const Text("My Daily Data"),
+                style: TextButton.styleFrom(
+                    primary: Color(0xFFFFFFFF),
+                    backgroundColor: Color(0xFF65FFB3),
+                    textStyle: TextStyle(fontSize: 20)),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return DailyDataPage();
+                    }),
+                  );
+                },
+              ),
+              TextButton(
+                child: const Text("My Daily Tasks"),
+                style: TextButton.styleFrom(
+                    primary: Color(0xFFFFFFFF),
+                    backgroundColor: Color(0xFF65FFB3),
+                    textStyle: TextStyle(fontSize: 20)),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return Homepage();
+                    }),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
