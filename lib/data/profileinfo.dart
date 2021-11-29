@@ -3,12 +3,14 @@ import 'package:what_todo/levels.dart';
 
 class ProfileData extends StatelessWidget {
   final String name;
+  final String username;
   final String group;
 
   ProfileData(
-      this.name,
-      this.group,
-      );
+    this.name,
+    this.username,
+    this.group,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +22,12 @@ class ProfileData extends StatelessWidget {
             flex: 1,
             child: Text(
               name,
+            ),
+          ),
+          Flexible(
+            flex: 1,
+            child: Text(
+              "Your username: " + username,
             ),
           ),
           Flexible(

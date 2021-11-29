@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-class GroupMembers {
+class GroupMembersData {
   final String name;
 
-  GroupMembers({
+  GroupMembersData({
     this.name,
   });
 }
 
-final List<GroupMembers> groupMembers = [
-  GroupMembers(name: 'Mia'),
-  GroupMembers(name: 'Anmol'),
-  GroupMembers(name: 'Barbara'),
-  GroupMembers(name: 'Jaroslav'),
+final List<GroupMembersData> groupMembers = [
+  GroupMembersData(name: 'Mia'),
+  GroupMembersData(name: 'Anmol'),
+  GroupMembersData(name: 'Barbara'),
+  GroupMembersData(name: 'Jaroslav'),
 ];
 
-class GroupMembersData extends StatelessWidget {
+class GroupMembers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

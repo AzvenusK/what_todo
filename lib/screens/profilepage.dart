@@ -1,4 +1,4 @@
-import 'package:what_todo/group.dart';
+import 'package:what_todo/groupinfo.dart';
 import 'package:what_todo/profileinfo.dart';
 import 'package:flutter/material.dart';
 
@@ -15,10 +15,10 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-        child: ListView(
-          children: [
-            ProfileData('Mia', 'Go Green'),
-            GroupMembersData(),
+        child: Column(
+          children: <Widget>[
+            ProfileData('Mia', 'Mia123', 'Go Green'),
+            GroupMembers(),
           ],
         ),
       ),

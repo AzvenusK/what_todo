@@ -57,7 +57,7 @@ class _HomepageState extends State<Homepage> {
                                       ),
                                     ),
                                   ).then(
-                                        (value) {
+                                    (value) {
                                       setState(() {});
                                     },
                                   );
@@ -83,8 +83,7 @@ class _HomepageState extends State<Homepage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Taskpage(task: null)
-                      ),
+                          builder: (context) => Taskpage(task: null)),
                     ).then((value) {
                       setState(() {});
                     });
@@ -109,16 +108,13 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
               Positioned(
-
                 bottom: 600.0,
                 right: 0.0,
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => ProfilePage()
-                      ),
+                      MaterialPageRoute(builder: (context) => ProfilePage()),
                     ).then((value) {
                       setState(() {});
                     });
@@ -149,4 +145,3 @@ class _HomepageState extends State<Homepage> {
     );
   }
 }
-
