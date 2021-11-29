@@ -152,7 +152,7 @@ class TodoWidget extends StatelessWidget {
   }
 }
 
-class FactCardWidget extends StatefulWidget {
+/*class FactCardWidget extends StatefulWidget {
   @override
   _FactCardWidgetState createState() => _FactCardWidgetState();
 }
@@ -216,6 +216,10 @@ class _FactCardWidgetState extends State<FactCardWidget> {
     );
   }
 }
+<<<<<<< Updated upstream
+=======
+*/
+>>>>>>> Stashed changes
 
 class NoGlowBehaviour extends ScrollBehavior {
   @override
@@ -224,7 +228,7 @@ class NoGlowBehaviour extends ScrollBehavior {
     return child;
   }
 }
-
+/*
 Future fetchFact() async {
   var connectivityResult = await (Connectivity().checkConnectivity());
   if (connectivityResult == ConnectivityResult.mobile ||
@@ -237,3 +241,7 @@ Future fetchFact() async {
   } else
     return "You must be connected to internet to get facts!";
 }
+<<<<<<< Updated upstream
+=======
+*/
+>>>>>>> Stashed changes

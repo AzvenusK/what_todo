@@ -36,7 +36,7 @@ class _HomepageState extends State<Homepage> {
                       image: AssetImage('assets/images/logo.png'),
                     ),
                   ),
-                  FactCardWidget(),
+                  //FactCardWidget(),
                   Expanded(
                     child: FutureBuilder(
                       initialData: [],
