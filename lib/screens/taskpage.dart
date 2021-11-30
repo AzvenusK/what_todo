@@ -253,7 +253,7 @@ class _TaskpageState extends State<Taskpage> {
                       height: 60.0,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                            colors: [Color(0xFFce0000), Color(0xFF690000)],
+                            colors: [Color(0xFFff6665), Color(0xFFff1a19)],
                             begin: Alignment(0.0, -1.0),
                             end: Alignment(0.0, 1.0)),
                         borderRadius: BorderRadius.circular(20.0),

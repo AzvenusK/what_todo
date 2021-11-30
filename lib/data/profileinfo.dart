@@ -16,20 +16,44 @@ class ProfileData extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
             name,
+            style: TextStyle(
+              fontSize: 24.0,
+              color: Colors.black,
+            ),
           ),
           Text(
-            "Your username: " + username,
+            "Username: " + username,
+            style: TextStyle(
+              fontSize: 18.0,
+              color: Colors.deepPurpleAccent,
+            ),
           ),
           Text(
-            "Your Group: " + group,
-          ),
-          Text(
-            "Your Group Level: Level 3",
+            "Clan: " + group,
+            style: TextStyle(
+              fontSize: 18.0,
+              color: Colors.deepOrangeAccent,
+            ),
           ),
           Level(),
+          Text(
+            "Exp: 350/700",
+            style: TextStyle(
+              fontSize: 16.0,
+              color: Colors.black26,
+            ),
+          ),
+          Text(
+            "Lv 3",
+            style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.black54,
+            ),
+          ),
         ],
       ),
     );

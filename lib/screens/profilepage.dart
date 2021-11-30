@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:what_todo/data/socialpage.dart';
 import 'package:what_todo/screens/dailydatapage.dart';
 import 'package:what_todo/screens/homepage.dart';
+import 'package:what_todo/screens/datapage.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -13,61 +14,106 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Profile"),
-      ),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-          height: MediaQuery.of(context).size.height + 0.98,
-          child: ListView(
-            children: <Widget>[
-              ProfileData('Mia', 'Mia123', 'Go Green'),
-              GroupMembers(),
-              TextButton(
-                child: const Text("Social Feed"),
-                style: TextButton.styleFrom(
-                    primary: Color(0xFFFFFFFF),
-                    backgroundColor: Color(0xFF65FFB3),
-                    textStyle: TextStyle(fontSize: 20)),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) {
-                      return SocialPage();
-                    }),
-                  );
-                },
-              ),
-              TextButton(
-                child: const Text("My Daily Data"),
-                style: TextButton.styleFrom(
-                    primary: Color(0xFFFFFFFF),
-                    backgroundColor: Color(0xFF65FFB3),
-                    textStyle: TextStyle(fontSize: 20)),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) {
-                      return DailyDataPage();
-                    }),
-                  );
-                },
-              ),
-              TextButton(
-                child: const Text("My Daily Tasks"),
-                style: TextButton.styleFrom(
-                    primary: Color(0xFFFFFFFF),
-                    backgroundColor: Color(0xFF65FFB3),
-                    textStyle: TextStyle(fontSize: 20)),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) {
-                      return Homepage();
-                    }),
-                  );
-                },
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          color: Color(0xFFffffff),
+          child: Stack(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(
+                      top: 20.0,
+                      bottom: 16.0,
+                    ),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black54),
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    height: 150.0,
+                    width: 150.0,
+                    child: Image(
+                      image: AssetImage('assets/images/minty_profile_pic.png'),
+                    ),
+                  ),
+                  ProfileData('Tolstoy DiCaprio', 'lotxtol', 'Go Green'),
+                  GroupMembers(),
+                  SizedBox(
+                    width: 250.0,
+                    child: TextButton(
+                      child: const Text("Social Feed"),
+                      style: TextButton.styleFrom(
+                          primary: Color(0xFFFFFFFF),
+                          backgroundColor: Color(0xFF32ff9a),
+                          textStyle: TextStyle(fontSize: 20)),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return SocialPage();
+                          }),
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    width: 250.0,
+                    child: TextButton(
+                      child: const Text("My Daily Data"),
+                      style: TextButton.styleFrom(
+                          primary: Color(0xFFFFFFFF),
+                          backgroundColor: Color(0xFF32ff9a),
+                          textStyle: TextStyle(fontSize: 20)),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return DailyDataPage();
+                          }),
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    width: 250.0,
+                    child: TextButton(
+                      child: const Text("My Group Data"),
+                      style: TextButton.styleFrom(
+                          primary: Color(0xFFFFFFFF),
+                          backgroundColor: Color(0xFF32ff9a),
+                          textStyle: TextStyle(fontSize: 20)),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return DataPage();
+                          }),
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    width: 250.0,
+                    child: TextButton(
+                      child: const Text("My Daily Tasks"),
+                      style: TextButton.styleFrom(
+                          primary: Color(0xFFFFFFFF),
+                          backgroundColor: Color(0xFF32ff9a),
+                          textStyle: TextStyle(fontSize: 20)),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return Homepage();
+                          }),
+                        );
+                      },
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

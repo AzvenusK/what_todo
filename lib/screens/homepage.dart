@@ -25,7 +25,7 @@ class _HomepageState extends State<Homepage> {
           child: Stack(
             children: [
               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     margin: EdgeInsets.only(
@@ -108,8 +108,8 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
               Positioned(
-                bottom: 600.0,
-                right: 0.0,
+                bottom: 24.0,
+                left: 0.0,
                 child: GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -120,14 +120,14 @@ class _HomepageState extends State<Homepage> {
                     });
                   },
                   child: Container(
-                    width: 80.0,
-                    height: 80.0,
+                    width: 60.0,
+                    height: 60.0,
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
-                          colors: [Color(0xFF65FFB3), Color(0xFF224600)],
+                          colors: [Color(0xFF65FFB3), Color(0xFF19FF8D)],
                           begin: Alignment(0.0, -1.0),
                           end: Alignment(0.0, 1.0)),
-                      borderRadius: BorderRadius.circular(50.0),
+                      borderRadius: BorderRadius.circular(20.0),
                     ),
                     child: Image(
                       image: AssetImage(

@@ -110,30 +110,25 @@ class PersonalChart extends StatelessWidget {
     ];
 
     return Container(
-      height: 400,
-      padding: EdgeInsets.all(20),
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Column(
-            children: <Widget>[
-              Expanded(
-                child: charts.BarChart(
-                  series,
-                  animate: true,
-                  behaviors: [
-                    charts.RangeAnnotation([
-                      charts.LineAnnotationSegment(
-                          4, charts.RangeAnnotationAxisType.domain,
-                          color: charts.MaterialPalette.black,
-                          endLabel: 'Target')
-                    ])
-                  ],
-                ),
-              ),
-            ],
+      height: 300,
+      width: 300,
+      margin: EdgeInsets.only(
+        top: 20.0,
+        bottom: 20
+      ),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.black54)
+      ),
+      child: charts.BarChart(
+        series,
+        behaviors: [
+          charts.RangeAnnotation([
+            charts.LineAnnotationSegment(
+                6, charts.RangeAnnotationAxisType.measure,
+                color: charts.MaterialPalette.black, endLabel: 'Target')
+          ],
           ),
-        ),
+        ],
       ),
     );
   }
@@ -154,15 +149,27 @@ class GroupChart extends StatelessWidget {
           colorFn: (GroupCarbonData series, _) => series.color),
     ];
 
-    return charts.BarChart(
+    return Container(
+      height: 300,
+      width: 300,
+      margin: EdgeInsets.only(
+          top: 20.0,
+          bottom: 20
+      ),
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.black54)
+      ),
+      child: charts.BarChart(
       series,
       behaviors: [
         charts.RangeAnnotation([
           charts.LineAnnotationSegment(
-              10, charts.RangeAnnotationAxisType.measure,
+              6, charts.RangeAnnotationAxisType.measure,
               color: charts.MaterialPalette.black, endLabel: 'Target')
-        ])
+        ],
+        ),
       ],
+    ),
     );
   }
 }

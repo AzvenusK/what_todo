@@ -19,38 +19,62 @@ class _WeeklyDataPageState extends State<WeeklyDataPage> {
         ),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Data on Weekly Carbon Emissions"),
-          titleTextStyle: TextStyle(
-            fontSize: 22.0,
-            color: Color(0xFF000000),
+        body: Container(
+          margin: EdgeInsets.only(
+            top: 100.0,
           ),
-          backgroundColor: Color(0xFFffffff),
-        ),
-        body: Column(
-          children: [
-            Center(
-              child: PersonalChart(
-                data: personalWeeklyData,
+          child: Column(
+              children: [
+              Text("Data on Weekly Carbon Emissions",
+              style: TextStyle(
+                fontSize: 18.0,
+                color: Colors.black54,
+                ),
               ),
-            ),
-            Center(child: Legend()),
-            TextButton(
-              child: const Text("Daily"),
-              style: TextButton.styleFrom(
-                  primary: Color(0xFFFFFFFF),
-                  backgroundColor: Color(0xFF65FFB3),
-                  textStyle: TextStyle(fontSize: 20)),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) {
-                    return DailyDataPage();
-                  }),
-                );
-              },
-            ),
-          ],
+              Center(
+                child: PersonalChart(
+                  data: personalWeeklyData,
+                ),
+              ),
+                Center(child: Legend()),
+                SizedBox(
+                  width: 250.0,
+                  child: TextButton(
+                    child: const Text("Weekly"),
+                    style: TextButton.styleFrom(
+                        primary: Color(0xFFFFFFFF),
+                        backgroundColor: Color(0xFF65FFB3),
+                        textStyle: TextStyle(fontSize: 20)),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return WeeklyDataPage();
+                        }),
+                      );
+                    },
+                  ),
+                ),
+                SizedBox(
+                  width: 250.0,
+                  child: TextButton(
+                    child: const Text("Daily"),
+                    style: TextButton.styleFrom(
+                        primary: Color(0xFFFFFFFF),
+                        backgroundColor: Color(0xFF65FFB3),
+                        textStyle: TextStyle(fontSize: 20)),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return DailyDataPage();
+                        }),
+                      );
+                    },
+                  ),
+                ),
+              ],
+          ),
         ),
       ),
     );
