@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:what_todo/data/grapher.dart';
 import 'package:what_todo/data/graphlegend.dart';
 import 'package:what_todo/screens/dailydatapage.dart';
+import 'package:what_todo/screens/profilepage.dart';
 
 class WeeklyDataPage extends StatefulWidget {
   @override
@@ -40,24 +41,6 @@ class _WeeklyDataPageState extends State<WeeklyDataPage> {
                 SizedBox(
                   width: 250.0,
                   child: TextButton(
-                    child: const Text("Weekly"),
-                    style: TextButton.styleFrom(
-                        primary: Color(0xFFFFFFFF),
-                        backgroundColor: Color(0xFF65FFB3),
-                        textStyle: TextStyle(fontSize: 20)),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) {
-                          return WeeklyDataPage();
-                        }),
-                      );
-                    },
-                  ),
-                ),
-                SizedBox(
-                  width: 250.0,
-                  child: TextButton(
                     child: const Text("Daily"),
                     style: TextButton.styleFrom(
                         primary: Color(0xFFFFFFFF),
@@ -68,6 +51,24 @@ class _WeeklyDataPageState extends State<WeeklyDataPage> {
                         context,
                         MaterialPageRoute(builder: (context) {
                           return DailyDataPage();
+                        }),
+                      );
+                    },
+                  ),
+                ),
+                SizedBox(
+                  width: 250.0,
+                  child: TextButton(
+                    child: const Text("Profile"),
+                    style: TextButton.styleFrom(
+                        primary: Color(0xFFFFFFFF),
+                        backgroundColor: Color(0xFF65FFB3),
+                        textStyle: TextStyle(fontSize: 20)),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return ProfilePage();
                         }),
                       );
                     },

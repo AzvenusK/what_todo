@@ -5,7 +5,7 @@ import 'package:what_todo/data/socialpage.dart';
 import 'package:what_todo/screens/dailydatapage.dart';
 import 'package:what_todo/screens/homepage.dart';
 import 'package:what_todo/screens/datapage.dart';
-
+import 'package:what_todo/screens/grouptaskpage.dart';
 class ProfilePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _ProfilePageState();
@@ -80,7 +80,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   SizedBox(
                     width: 250.0,
                     child: TextButton(
-                      child: const Text("My Group Data"),
+                      child: const Text("My Group Tasks"),
                       style: TextButton.styleFrom(
                           primary: Color(0xFFFFFFFF),
                           backgroundColor: Color(0xFF32ff9a),
@@ -89,7 +89,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) {
-                            return DataPage();
+                            return GroupTaskPage();
                           }),
                         );
                       },
