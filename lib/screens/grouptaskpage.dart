@@ -32,7 +32,6 @@ class _GroupTaskPageState extends State<GroupTaskPage> {
                             MaterialPageRoute(builder: (context) {
                               return ProfilePage();
                             }),
-                            Ink.image(image: )
                           );
                         },
                       ),
